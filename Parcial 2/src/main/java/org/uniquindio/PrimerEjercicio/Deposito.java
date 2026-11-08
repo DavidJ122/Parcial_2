@@ -1,79 +1,80 @@
 package org.uniquindio.PrimerEjercicio;
 
 public class Deposito {
-    public boolean retirarCaja(Pila pila,String codigo){
-        if (pila.isEmpty()) return false;
+    public boolean retirarCaja(Pila_valor pilaValor, String codigo){
+        if (pilaValor.isEmpty()) return false;
         Caja caja_encontrada = null;
-        Pila pilaAux = new Pila();
-        while (!pila.isEmpty()){
-            Caja aux = pila.pop();
+        Pila_valor pilaValorAux = new Pila_valor();
+        while (!pilaValor.isEmpty()){
+            Caja aux = pilaValor.pop();
             if (aux.is_codigo(codigo)){
                 caja_encontrada = aux;
             }
-            else{pilaAux.push(aux);}
+            else{
+                pilaValorAux.push(aux);}
         }
-        while (!pilaAux.isEmpty()){
-            pila.push(pilaAux.pop());
+        while (!pilaValorAux.isEmpty()){
+            pilaValor.push(pilaValorAux.pop());
         }
         if (caja_encontrada == null) return false;
         System.out.println("Caja retirada: " + caja_encontrada);
-        System.out.println("Pila sin barajear: " + pila);
-        if (caja_encontrada.is_par()){ this.organizarPar(pila);}
-        else {  this.organizarImpar(pila);}
+        System.out.println("Pila sin barajear: " + pilaValor);
+        if (caja_encontrada.is_par()){ this.organizarPar(pilaValor);}
+        else {  this.organizarImpar(pilaValor);}
         return true;
 
     }
-    private void organizarPar(Pila pila){
+    private void organizarPar(Pila_valor pilaValor){
         System.out.println("El valor es par. Barajeando... ");
-        Pila pilaPar = new Pila();
-        Pila pilaImpar = new Pila();
+        Pila_valor pilaValorPar = new Pila_valor();
+        Pila_valor pilaValorImpar = new Pila_valor();
         int index = 1;
-        while (!pila.isEmpty()){
-            Caja aux = pila.pop();
+        while (!pilaValor.isEmpty()){
+            Caja aux = pilaValor.pop();
             if (this.esPar(index)){
-                pilaPar.push(aux);
+                pilaValorPar.push(aux);
 
             }
             else{
-                pilaImpar.push(aux);
+                pilaValorImpar.push(aux);
             }
             index++;
         }
         index = 1;
-        while (!pilaPar.isEmpty()){
-            pila.push(pilaPar.pop());
+        while (!pilaValorPar.isEmpty()){
+            pilaValor.push(pilaValorPar.pop());
             index++;
         }
-        while (!pilaImpar.isEmpty()){
-            pila.push(pilaImpar.pop());
+        while (!pilaValorImpar.isEmpty()){
+            pilaValor.push(pilaValorImpar.pop());
             index++;
         }
 
     }
 
-    private void organizarImpar(Pila pila){
+    private void organizarImpar(Pila_valor pilaValor){
         System.out.println("El valor es impar. Barajeando...");
-        Pila pilaPar = new Pila();
-        Pila pilaImpar = new Pila();
+        Pila_valor pilaValorPar = new Pila_valor();
+        Pila_valor pilaValorImpar = new Pila_valor();
         int index = 1;
-        while (!pila.isEmpty()){
-            Caja aux = pila.pop();
+        while (!pilaValor.isEmpty()){
+            Caja aux = pilaValor.pop();
             if (this.esPar(index)){
-                pilaPar.push(aux);
+                pilaValorPar.push(aux);
 
             }
             else{
-                pilaImpar.push(aux);
+                pilaValorImpar.push(aux);
             }
             index++;
         }
         index = 1;
-        while (!pilaImpar.isEmpty()){
-            pila.push(pilaImpar.pop());
+        while (!pilaValorImpar.isEmpty()){
+            pilaValor.push(pilaValorImpar.pop());
             index++;
         }
-        while (!pilaPar.isEmpty()){
-            pila.push(pilaPar.pop());
+        while (!pilaValorPar.isEmpty()){
+            pilaValor.push(pilaValorPar.pop());
             index++;
         }
 

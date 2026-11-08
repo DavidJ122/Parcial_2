@@ -1,12 +1,12 @@
 package org.uniquindio.PrimerEjercicio;
 
-public class Pila {
+public class Pila_valor {
     private Caja head = null;
 
-    public Pila(Caja head){
+    public Pila_valor(Caja head){
         this.setHead(head);
     }
-    public Pila(){}
+    public Pila_valor(){}
 
     private void setHead(Caja head){
         this.head = head;
@@ -36,7 +36,7 @@ public class Pila {
         return this.getHead();
     }
     public String toString(){
-        Pila pilaAux = new Pila();
+        Pila_valor pilaValorAux = new Pila_valor();
         StringBuilder cadena = new StringBuilder();
         cadena.append("\n");
         int index = 1;
@@ -44,11 +44,11 @@ public class Pila {
             cadena.append("{").append(index).append("}").append("-");
             cadena.append(this.peek().toString());
             cadena.append("\n");
-            pilaAux.push(this.pop());
+            pilaValorAux.push(this.pop());
             index++;
         }
-        while (!pilaAux.isEmpty()){
-            this.push(pilaAux.pop());
+        while (!pilaValorAux.isEmpty()){
+            this.push(pilaValorAux.pop());
         }
         return cadena.toString();
     }

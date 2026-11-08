@@ -2,7 +2,7 @@ package org.uniquindio;
 
 import org.uniquindio.PrimerEjercicio.Caja;
 import org.uniquindio.PrimerEjercicio.Deposito;
-import org.uniquindio.PrimerEjercicio.Pila;
+import org.uniquindio.PrimerEjercicio.Pila_valor;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -11,46 +11,46 @@ public class Main {
         primerEjercicio();
     }
     public static void primerEjercicio(){
-        Pila pila = new Pila();
+        Pila_valor pilaValor = new Pila_valor();
         Caja caja1 = new Caja("C1",2);
-        pila.push(caja1);
+        pilaValor.push(caja1);
         Caja caja2 = new Caja("C2",4);
-        pila.push(caja2);
+        pilaValor.push(caja2);
         Caja caja3 = new Caja("C3",6);
-        pila.push(caja3);
+        pilaValor.push(caja3);
         Caja caja4 = new Caja("C4",8);
-        pila.push(caja4);
+        pilaValor.push(caja4);
         Caja caja5 = new Caja("C5",3);
-        pila.push(caja5);
+        pilaValor.push(caja5);
         Caja caja6 = new Caja("C6",9);
-        pila.push(caja6);
+        pilaValor.push(caja6);
         Caja caja7 = new Caja("C7",5);
-        pila.push(caja7);
+        pilaValor.push(caja7);
 
         Deposito deposito = new Deposito();
-        System.out.println("Pila Inicial: " + pila);
+        System.out.println("Pila Inicial: " + pilaValor);
 
-        if(deposito.retirarCaja(pila,"C3")) {
-            System.out.println("Pila despues de retirar Caja 3: " + pila);
+        if(deposito.retirarCaja(pilaValor,"C3")) {
+            System.out.println("Pila despues de retirar Caja 3: " + pilaValor);
         }
         else {System.out.println("No se encontro la caja 3");}
 
-        if (deposito.retirarCaja(pila,"C4")){
-        System.out.println("Pila despues de retirar Caja 4: " + pila);}
+        if (deposito.retirarCaja(pilaValor,"C4")){
+        System.out.println("Pila despues de retirar Caja 4: " + pilaValor);}
 
         else {System.out.println("No se encontro la caja 4");}
 
-        if (deposito.retirarCaja(pila,"C7")){
-            System.out.println("Pila despues de retirar Caja 7: " + pila);
+        if (deposito.retirarCaja(pilaValor,"C7")){
+            System.out.println("Pila despues de retirar Caja 7: " + pilaValor);
         }
         else {System.out.println("No se encontro la caja 7");}
 
         //Prueba
-        if (deposito.retirarCaja(pila,"C20")){
-            System.out.println("Pila despues de retirar Caja 20: " + pila);
+        if (deposito.retirarCaja(pilaValor,"C20")){
+            System.out.println("Pila despues de retirar Caja 20: " + pilaValor);
         }
         else {System.out.println("No se encontro la caja 20");}
-        System.out.println("Pila final:" + pila );
+        System.out.println("Pila final:" + pilaValor);
 
 
     }
