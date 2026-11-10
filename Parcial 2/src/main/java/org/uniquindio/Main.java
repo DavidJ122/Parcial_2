@@ -10,6 +10,8 @@ import org.uniquindio.TercerEjercicio.Camion;
 import org.uniquindio.TercerEjercicio.ColaPaquete;
 import org.uniquindio.TercerEjercicio.Paquete;
 import org.uniquindio.TercerEjercicio.Tipo;
+import org.uniquindio.CuartoEjercicio.Laboratorio;
+import org.uniquindio.CuartoEjercicio.Nodo;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -109,5 +111,22 @@ public class Main {
         System.out.println("Paquetes pendientes: ");
         System.out.println(cola);
 
+    }
+public static void cuartoEjercicio() {
+         Nodo raiz = new Nodo(41);
+        Nodo n20 = new Nodo(20);
+        Nodo n52 = new Nodo(52);
+        Nodo n16 = new Nodo(16);
+        Nodo n60 = new Nodo(60);
+
+        raiz.setIzq(n20);
+        raiz.setDer(n52);
+        n20.setIzq(n16);
+        n52.setDer(n60);
+
+        Laboratorio lab = new Laboratorio();
+        
+        int totalEnRango = lab.contarEquiposEnRango(raiz, 15, 50);
+        System.out.println("Cantidad de equipos en el rango [15, 50]: " + totalEnRango);
     }
 }
