@@ -105,11 +105,15 @@ public class Main {
         cola.add(paquete7);
         System.out.println("Paquetes pendientes originales:");
         System.out.println(cola);
-        ColaPaquete Enviados = new Camion().seleccionarPaquetes(cola,14);
+        Camion camion = new Camion(14);
+        ColaPaquete Enviados = camion.seleccionarPaquetes(cola);
         System.out.println("Paquetes enviados:");
         System.out.println(Enviados);
         System.out.println("Paquetes pendientes: ");
         System.out.println(cola);
+        camion.getPeso();
+
+
 
     }
 public static void cuartoEjercicio() {
@@ -128,5 +132,6 @@ public static void cuartoEjercicio() {
         
         int totalEnRango = lab.contarEquiposEnRango(raiz, 15, 50);
         System.out.println("Cantidad de equipos en el rango [15, 50]: " + totalEnRango);
+
     }
 }
